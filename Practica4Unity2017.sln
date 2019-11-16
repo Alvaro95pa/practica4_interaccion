@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica4Unity2017", "Practica4Unity2017.csproj", "{944609F6-50B4-38DA-A45B-0D0D77CF5849}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practica4Unity2017.Editor", "Practica4Unity2017.Editor.csproj", "{C9B297EF-5014-2576-148F-0FDD808F9D13}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{944609F6-50B4-38DA-A45B-0D0D77CF5849}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{944609F6-50B4-38DA-A45B-0D0D77CF5849}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{944609F6-50B4-38DA-A45B-0D0D77CF5849}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{944609F6-50B4-38DA-A45B-0D0D77CF5849}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9B297EF-5014-2576-148F-0FDD808F9D13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9B297EF-5014-2576-148F-0FDD808F9D13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9B297EF-5014-2576-148F-0FDD808F9D13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9B297EF-5014-2576-148F-0FDD808F9D13}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
