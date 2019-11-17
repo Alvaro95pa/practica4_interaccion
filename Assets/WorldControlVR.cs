@@ -6,10 +6,12 @@ public class WorldControlVR : MonoBehaviour
 
     public CameraControl cameraControl = null;
     private Vector3 position = new Vector3(0.0f, 0.0f, 0.0f);
-    private float lastVarX = 0.0f;
-    private float speed = 10.0f;
     private Vector3 myPosition = new Vector3(0.0f, 0.0f, 0.0f);
-    private float vertical = 0.0f;
+
+    private readonly float speed = 20.0f;
+
+    private float lastVarX = 0.0f;
+    private float vertical = -1.0f;
     private float lastVertical;
 
     void Start()
@@ -25,7 +27,8 @@ public class WorldControlVR : MonoBehaviour
         float yRotation = 0.0f;
         if (cameraControl)
         {
-            yRotation = cameraControl.yRotation;
+            yRotation = -cameraControl.yRotation;
+
         }
 
         //Shake your head
@@ -36,7 +39,6 @@ public class WorldControlVR : MonoBehaviour
         if (cameraControl)
         {
             varX = cameraControl.zRotation;
-
         }
         else
         {
@@ -49,13 +51,15 @@ public class WorldControlVR : MonoBehaviour
 
         float t = Time.deltaTime;
 
-        Vector3 forwardVector = Vector3.forward;
+        Vector3 forwardVector;
+        forwardVector = Quaternion.AngleAxis(-yRotation, Vector3.up) * Vector3.forward;
 
         float resta = lastVarX - varX;
 
         if (Mathf.Abs(resta) > 2)
         {
             if(lastVertical < 1.0f) vertical += 0.01f;
+
             myPosition += (-forwardVector) * vertical * speed * t;
         }
         else
@@ -67,7 +71,8 @@ public class WorldControlVR : MonoBehaviour
         position = Quaternion.AngleAxis(yRotation, Vector3.up) * position;
 
         //**************************************//
-        
+
+        this.transform.rotation = Quaternion.Euler(new Vector3(0.0f, yRotation, 0.0f));
         this.transform.position = position;
         lastVarX = varX;
         lastVertical = vertical;
