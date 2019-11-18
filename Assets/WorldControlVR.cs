@@ -8,7 +8,7 @@ public class WorldControlVR : MonoBehaviour
     private Vector3 position = new Vector3(0.0f, 0.0f, 0.0f);
     private Vector3 myPosition = new Vector3(0.0f, 0.0f, 0.0f);
 
-    private readonly float speed = 20.0f;
+    private readonly float speed = 60.0f;
 
     private float lastVarX = 0.0f;
     private float vertical = -1.0f;
@@ -52,13 +52,13 @@ public class WorldControlVR : MonoBehaviour
         float t = Time.deltaTime;
 
         Vector3 forwardVector;
-        forwardVector = Quaternion.AngleAxis(-yRotation, Vector3.up) * Vector3.forward;
+        forwardVector = Quaternion.AngleAxis(-yRotation, Vector3.up) * cameraControl.transform.forward;
 
         float resta = lastVarX - varX;
 
         if (Mathf.Abs(resta) > 2)
         {
-            if(lastVertical < 1.0f) vertical += 0.01f;
+            if (lastVertical < 1.0f) vertical += 0.01f;
 
             myPosition += (-forwardVector) * vertical * speed * t;
         }
